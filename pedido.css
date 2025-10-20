@@ -1,0 +1,49 @@
+/* --- Línea de progreso --- */
+.linea-progreso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 700px;
+  position: relative;
+}
+
+.linea-progreso::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
+}
+
+.paso {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.paso.completado {
+  background: rgba(74, 138, 85, 0.85);
+  border-color: rgba(74, 138, 85, 1);
+  box-shadow: 0 0 15px rgba(90, 200, 110, 0.7);
+}
+
+.paso.activo {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0d1b2a;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+}
